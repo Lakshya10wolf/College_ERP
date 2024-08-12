@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title> Administratior's Registration</title>
+  <meta name="viewport" content="width=device-width,initial-scale='1'">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'style1.css' %}" />
+  <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="css/glyphicon.css">
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/jquery1.js" type="text/javascript"></script>
+</head>
+<style>
+.form{
+height:max-content;
+width:70%;
+border:1px black solid;
+border-radius:15px;
+background-image:url('img1.jpg');
+background-size:100%;
+}
+.image
+{
+height:400px;
+width:40%;
+margin-right:420px;
+margin-top:60px;
+
+background-size:100% 100%;
+}
+.sec
+{
+height:500px;
+width:50%;
+
+float:right;
+margin-top:50px;
+}.sec1
+{
+height:50px;
+width:350px;
+margin-top:50px;
+}
+.sec2
+{
+height:100px;
+width:350px;
+margin-left:-50px;
+margin-top:20px;
+}
+
+#one{
+           background-color: black;
+           color: white;
+
+       }
+       #logo{
+
+           height: 70px;
+           margin-top: -30px;
+           margin-right: 1px;
+       }
+
+       .nav-item:hover{
+         transform: scale(1.1) ;
+         font-weight: bold;
+
+
+       }
+
+       .nav-item{
+         font-weight: bold;
+         font-size:small;
+         margin: auto;
+
+       }
+
+       nav ul {
+                background : none;
+                float:right;
+                font-size: 1.125em;
+                margin-right: -5%;
+                text-align:right;
+                width:45%;
+
+  }
+
+  #footer {
+   position:bottom fixed;
+   bottom:0;
+   left: 0;
+   width: 100%;
+   background-color:black;
+   color: white;
+   text-align: center;
+
+}
+#aa{
+  margin:-15px;
+  margin-top:4px;
+  margin: left 10px;
+
+}
+
+#bt{
+	background-color: white;
+}
+
+#onam{
+    align-self: top;
+}
+
+#jumbo{
+    background-color: white;
+    background-size: cover;
+}
+
+.messages{
+
+background-color:#f22413;
+font-weight:bold;
+font-size:30px;
+width:950px;
+height:50px;
+border-radius:15px;
+
+}
+#onam{
+font-weight:bold;
+}
+
+</style>
+<body style=" font-family: Amatic SC">
+	<!---navbar with icon-->
+  <nav class="navbar navbar-expand-sm navbar-light " id="one">
+    <a href="index" class="navbar-brand">
+        <img id="logo" src="{% static 'logoarq.jpg' %}"  style="width: 120px;" class="img-fluid">
+    </a>
+    <button class="navbar-toggler" type="button" id="bt" data-toggle="collapse" data-target="#cl">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+    <div class="collapse navbar-collapse " id="cl">
+        <div>
+            <ul class="navbar-nav  float-right "class="mx-auto" style="width: 250px; ">
+                <li class="nav-item">
+                <a href="index" class="nav-link" style="color: white;"><span class="glyphicon glyphicon-home" style="color: white;"></span >  HOME</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="color: white;"><span class="glyphicon glyphicon-search" style="color: white;"></span>  ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" style="color: white;"><span class="glyphicon glyphicon-earphone" style="color: white;"></span>   CONTACT</a>     
+                </li>
+                
+            </ul>
+        </div>
+    
+    </div>
+</nav>
+
+<center>
+
+    <div class="form-group">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li >
+            <div class="allert aler-success">{{message}}</div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+<div class="form" name="myform" id="myformid" class="container" >
+    <form action="areg" method="POST" class=class="form-horizontal" id="jumbo" style="font-family: Arial, Helvetica, sans-serif;">
+        <h1 class="display-4" id="onam" style=" font-family: Amatic SC">Administrator Registration</h1>
+        {% csrf_token %}
+        <hr class="my-2">
+        <br>
+               <br>
+
+                <!--    <label for="clgname">Clgname:</label>-->
+                <div class="form-group">
+                    <label class="control-label col-sm-2"  for="Name">College Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="clgname" required multiple="multiple" id="clgname" placeholder="Enter Your Name" value="NITRA Technical Campus" style="border:1px black solid;" >
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <!--    <label for="clgCode">ClgCode:</label>-->
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Name">College Code:</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" name="clgcode" required multiple="multiple" id="clgcode"  value="802" style="border:1px black solid;" >
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+
+                  <!--    <label for="UniversityName">UniversityName:</label>-->
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Name">University Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="uniname" required multiple="multiple" id="name"  value="Dr. A.P.J. Abdul Kalam Technical University, Lucknow" style="border:1px black solid;">
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Name">Email:</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" name="email" required multiple="multiple" id="email"  style="border:1px black solid;">
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+              <!--    <label for="username">Username:</label>-->
+              <div class="form-group">
+                <label class="control-label col-sm-2" >Username:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="username" required multiple="multiple"  placeholder="Enter Username" style="border:1px black solid;" >
+                </div>
+              </div>
+              <br>
+              <br>
+
+
+
+
+                <!--  <label for="pwd">Password:</label>-->
+
+        <div class="form-group">
+                <label  class="control-label col-sm-2" for="pwd" >Password:</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" name="pwd1" required multiple="multiple" id="pwd" placeholder="Enter password" style="border:1px black solid;">
+                 </div>
+
+                 <br>
+
+            <br>
+            <br>
+              <div class="form-group">
+                <label  class="control-label col-sm-2" for="pwd" >Confirm Password:</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" name="pwd2" required multiple="multiple" id="pwd1" placeholder="Enter password" style="border:1px black solid;">
+                 </div>
+
+                 <br>
+              <br>
+                  <br>
+
+                 <button class="btn btn-primary" style="font-weight:bold;"> Register</button>
+                 <button class="btn btn-primary" style="font-weight:bold;"> Reset  </button>
+    </div>
+
+        </div>
+    </form>
+</div>
+</center>
+<br>
+
+<!-- Footer -->
+<footer class="page-footer " id="footer">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="https://Arquero.com/" style="color:white">Arquero.com </a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<script >
+    function validatedata(){
+    var yr = document.getElementById('clgname');
+
+    var first5 = yr.value.substring(0,5);
+
+    var rollno=document.getElementById('rollno');
+
+    var username=document.getElementById('username');
+    username.value=clgcode.value+first5;
+    console.log(username.value);
+
+
+    return username;
+    }
+
+    document.getElementById('username').addEventListener("mouseover",validatedata);
+
+    if
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

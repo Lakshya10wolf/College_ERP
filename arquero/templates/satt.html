@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>My Attendance</title>
+  <meta name="viewport" content="width=device-width,initial-scale='1'">
+  <link rel="shortcut icon" href="{% static 'logoarq.jpg' %}" type="image/x-icon">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="css/glyphicon.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/jquery1.js" type="text/javascript"></script>
+  <style>
+     #logo{                          
+           
+           height: 70px;
+           margin-top: -30px;
+           margin-right: 1px;
+       }
+
+     #footer {
+   position:bottom fixed;
+   bottom: 0;   
+   left: 0;
+   width: 100%;
+   background-color:black;
+   color: white;
+   text-align: center;
+   
+}
+.fonts{
+        font-family: 'Amatic SC';
+}
+.para{
+  font-family: 'Amatic SC';
+  font-size: 41px;
+  color: black;
+}
+.nav-item:hover{
+         transform: scale(1.1) ;
+         font-weight: bold;
+         
+        
+       }
+
+       .nav-item{
+         font-weight: bold;
+         font-size:small;
+         margin: auto;
+         
+       }
+       
+       nav ul { 
+                background : none;
+                float:right;
+                font-size: 1.125em;
+                margin-right: -5%;
+                text-align:right;
+                width:45%;
+
+  }  
+  #one{
+           background-color: black;
+           color: white;
+          
+       }
+  #mySidenav a {
+  position: absolute;
+  left: -195px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 250px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  border-radius: 0 10px 10px 0;
+
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#blog {
+  top: 140px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 260px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 380px;
+  background-color: #ff8000;
+}
+#notification {
+  top: 500px;
+  background-color: #555;
+
+}
+.table{
+width:95%;
+padding-left:50px;
+}
+    
+  </style>
+</head>
+<body style="font-family:Amatic SC">
+		<!---navbar with icon-->
+  <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top" id="one">
+    <a href="index" class="navbar-brand">
+        <img id="logo" src="{% static 'logoarq.jpg' %}"  style="width: 120px; " class="img-fluid">
+    </a>
+    <button class="navbar-toggler" type="button" id="bt" data-toggle="collapse" data-target="#cl">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+    <div class="collapse navbar-collapse " id="cl">
+        <div>
+            <ul class="navbar-nav  float-right "class="mx-auto" style="width: 300px; ">
+                <li class="nav-item">
+                <a href="slogouts" class="nav-link" style="color: white; margin-right: -120px;"><span class="glyphicon glyphicon-log-out" style="color: white;"></span >  LOGOUT</a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    </div>
+</nav>
+<br><br><br>
+<div class="jumbotron">	
+<h1 class="fonts" style="font-size: 102px; text-align: center; border-bottom: 2px solid black;"><b>MY ATTENDANCE</b></h1><br><br>
+</div>
+<div class="container-fluid w3-padding">
+  <div class="row">
+    <div class="col-md-2">
+      <div id="mySidenav" class="sidenav">
+  <a href="spanel" id="about" class="fonts"><b>STUDENT's PORTAL</b></a>
+  <a href="stu_profile" id="blog" class="fonts"><b>MY INFORMATION</b></a>
+  <a href="#" id="projects" class="fonts"><b>EDIT PASSWORD</b></a>
+  <a href="#" id="contact" class="fonts"><b>PERFORMANCE REPORT</b></a>
+  <a href="#" id="notification" class="fonts"><b>NOTIFICATION HANDLE</b></a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="fonts" style="height: 650px; width: 1000px;margin-left: 10px;">
+        
+  <div style="border:1px black solid;border-radius:15px; box-shadow: 5px 5px #888888;"><div id="divattendance" style="border-radius:15px;background-color: black; color:white; font-size: 51px; background-clip: padding-box; padding: 5px; background-clip: padding-box; padding-left: 10px;"><b>My Attendance</b></div><br><br>
+
+
+      <table class="table" style="font-family: Arial, Helvetica, sans-serif;">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Attendance</th>
+      <th scope="col">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% load static %}
+    {% for da in data %}
+    <tr>
+      <td scope="row">{{da.date}}</td>
+      <th>{{da.subject}}</th>
+      <td>{{da.Attendance}}</td>
+      <td>{{da.Note}}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+      <br><br>
+</div><
+</div>
+</div>
+</div></div>
+<!-- Footer -->
+<footer class="page-footer " id="footer">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="https://Arquero.com/" style="color:white">Arquero.com </a>
+    </div>
+</footer>    
+    <!-- Copyright -->
+</body>
+</html>    

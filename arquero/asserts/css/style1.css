@@ -1,0 +1,164 @@
+.form{
+    height:max-content;
+    width:70%;
+    border:1px black solid;
+    border-radius:15px;
+    background-image:url('img1.jpg');
+    background-size:100%;
+    }
+    .image
+    {
+    height:400px;
+    width:40%;
+    margin-right:420px;
+    margin-top:60px;
+    background-size:100% 100%;
+    }
+    .sec
+    {
+    height:500px;
+    width:50%;
+
+    float:right;
+    margin-top:50px;
+    }
+
+    .sec1
+    {
+    height:50px;
+    width:350px;
+    margin-top:50px;
+    }
+
+    .sec2
+    {
+    height:100px;
+    width:350px;
+    margin-left:-50px;
+    margin-top:20px;
+    }
+
+    #one{
+               background-color: black;
+               color: white;
+
+           }
+           #logo{
+
+               height: 70px;
+               margin-top: -30px;
+               margin-right: 1px;
+           }
+
+           .nav-item:hover{
+             transform: scale(1.1) ;
+             font-weight: bold;
+
+
+           }
+
+           .nav-item{
+             font-weight: bold;
+             font-size:small;
+             margin: auto;
+
+           }
+
+           nav ul {
+                    background : none;
+                    float:right;
+                    font-size: 1.125em;
+                    margin-right: -5%;
+                    text-align:right;
+                    width:45%;
+
+      }
+
+      #footer {
+       position:bottom fixed;
+
+       left: 0;
+       width: 100%;
+       background-color:black;
+       color: white;
+       text-align: center;
+
+    }
+    #aa{
+      margin:-15px;
+      margin-top:4px;
+      margin: left 10px;
+
+    }
+
+    #bt{
+        background-color: white;
+    }
+
+    #onam{
+        align-self: top;
+    }
+
+    #jumbo{
+        background-color: white;
+        background-size: cover;
+    }
+    .fonts{
+            font-family: 'Amatic SC';
+    }
+    .para{
+      font-family: 'Amatic SC';
+      font-size: 41px;
+      color: black;
+    }
+    #div1,div2,div3,div4,div5{
+      width: 200px;
+      height: 150px;
+      background-color: white;
+
+    }
+
+    #div1:hover{
+
+      color: white;
+
+      transform: scale(1.1) ;
+      font-weight: bold;
+
+    }
+
+    #div2:hover{
+
+      color: white;
+
+      transform: scale(1.1) ;
+      font-weight: bold;
+
+    }
+
+    #div3:hover{
+
+      color: white;
+
+      transform: scale(1.1) ;
+      font-weight: bold;
+
+    }
+
+    #div4:hover{
+
+      color: white;
+
+      transform: scale(1.1) ;
+      font-weight: bold;
+
+    }
+
+    #div5:hover{
+
+      color: white;
+
+      transform: scale(1.1) ;
+      font-weight: bold;
+
+    }
